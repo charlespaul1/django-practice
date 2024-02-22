@@ -24,8 +24,8 @@ def home(request):
     else:
             
         return render(request, 'home.html', {})
-
-
-
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, 'Logged out!......')
+    return redirect('home')
+    
